@@ -24,8 +24,7 @@ Dvdbackup pozwala stworzyæ dok³adn± kopiê struktury DVD w taki sposób,
 dla programów do edycji wideo pod Windows czy Linuksem.
 
 %prep
-mkdir %{name}-%{version}
-cd %{name}-%{version}
+%setup -q -c -T
 cp %{SOURCE1} README
 
 %build
