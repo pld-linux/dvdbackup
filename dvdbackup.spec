@@ -1,5 +1,5 @@
-Summary:	backup dvd structure to disk
-Summary(pl):	kopiowanie na dysk struktury dvd
+Summary:	Backup DVD structure to disk
+Summary(pl):	Kopiowanie na dysk struktury DVD
 Name:		dvdbackup
 Version:	0.1
 Release:	1
@@ -11,27 +11,25 @@ BuildRequires:	libdvdread-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-
-Dvdbackup lets you make exact backup of DVD structure to disk in such a way
-that you can use it to master DVD, or as an input for video editing tools
-on Windows or Linux.
+Dvdbackup lets you make exact backup of DVD structure to disk in such
+a way that you can use it to master DVD, or as an input for video
+editing tools on Windows or Linux.
 
 %description -l pl
-
-Dvdbackup pozwala stworzyæ dok³adn± kopiê struktury DVD w taki sposób, ¿e
-mo¿esz j± pó¼niej wykorzystaæ do nagrania dysku DVD, albo jako dane dla
-programów do edycji wideo pod Windows czy Linuksem.
+Dvdbackup pozwala stworzyæ dok³adn± kopiê struktury DVD w taki sposób,
+¿e mo¿na j± pó¼niej wykorzystaæ do nagrania dysku DVD, albo jako dane
+dla programów do edycji wideo pod Windows czy Linuksem.
 
 %prep
 
 %build
-
-cc $RPM_OPT_FLAGS %{SOURCE0} -ldvdread -o dvdbackup
+%{__cc} %{rpmcflags} %{SOURCE0} -ldvdread -o dvdbackup
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/%{_bindir}
-install dvdbackup $RPM_BUILD_ROOT/%{_bindir}
+install -d $RPM_BUILD_ROOT%{_bindir}
+
+install dvdbackup $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
