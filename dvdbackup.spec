@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://dvd.chevelless230.com/%{name}.c
+# Source0-md5:	1db5d6c8b095995457bba6bf38e8a6b5
 URL:		http://dvd.chevelless230.com/dvdbackup.html
 BuildRequires:	libdvdread-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
