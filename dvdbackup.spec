@@ -1,77 +1,41 @@
-Summary:	-
-Summary(pl):	-
-Name:		-
-Version:	-
-Release:	-
-Epoch:		-
-License:	- (enter GPL/LGPL/BSD/BSD-like/other license name here)
-Group:		-
-Vendor:		-
-Icon:		-
-Source0:	%{name}-%{version}.tar.gz
-Source1:	-
-Patch0:		-
-URL:		-
-BuildRequires:	-
-PreReq:		-
-Requires:	-
-Requires(pre,post):	-
-Requires(preun):	-
-Requires(postun):	-
-Provides:	-
-Obsoletes:	-
-Conflicts:	-
+Summary:	backup dvd structure to disk
+Summary(pl):	kopiowanie na dysk struktury dvd
+Name:		dvdbackup
+Version:	0.1
+Release:	1
+License:	GPL
+Group:		Applications
+Source0:	http://dvd.chevelless230.com/%{name}.c
+URL:		http://dvd.chevelless230.com/dvdbackup.html
+BuildRequires:	libdvdread-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 
+Dvdbackup lets you make exact backup of DVD structure to disk in such a way
+that you can use it to master DVD, or as an input for video editing tools
+on Windows or Linux.
+
 %description -l pl
 
-%package subpackage
-Summary:	-
-Summary(pl):	-
-Group:		-
-
-%description subpackage
-
-%description subpackage -l pl
+Dvdbackup pozwala stworzyæ dok³adn± kopiê struktury DVD w taki sposób, ¿e
+mo¿esz j± pó¼niej wykorzystaæ do nagrania dysku DVD, albo jako dane dla
+programów do edycji wideo pod Windows czy Linuksem.
 
 %prep
-%setup -q -n %{name}-%{version}.orig -a 1
-%patch0 -p1
 
 %build
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure
-%{__make}
+
+cc $RPM_OPT_FLAGS %{SOURCE0} -ldvdread -o dvdbackup
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
-
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/%{_bindir}
+install dvdbackup $RPM_BUILD_ROOT/%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%pre
-
-%preun
-
-%post
-
-%postun
-
 %files
 %defattr(644,root,root,755)
-%doc README ChangeLog
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}
-
-%files subpackage
-%defattr(644,root,root,755)
-%doc extras/*.gz
-%{_datadir}/%{name}-ext
