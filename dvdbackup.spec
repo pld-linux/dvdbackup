@@ -7,6 +7,8 @@ License:	GPL
 Group:		Applications
 Source0:	http://dvd.chevelless230.com/%{name}.c
 # Source0-md5:	1db5d6c8b095995457bba6bf38e8a6b5
+Source1:	http://dvd.chevelless230.com/README
+# Source1-md5:	a80ef21a26c767c7fbb3e558ed50de29
 URL:		http://dvd.chevelless230.com/dvdbackup.html
 BuildRequires:	libdvdread-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -22,6 +24,9 @@ Dvdbackup pozwala stworzyæ dok³adn± kopiê struktury DVD w taki sposób,
 dla programów do edycji wideo pod Windows czy Linuksem.
 
 %prep
+mkdir %{name}-%{version}
+cd %{name}-%{version}
+cp %{SOURCE1} README
 
 %build
 %{__cc} %{rpmcflags} %{SOURCE0} -ldvdread -o dvdbackup
@@ -37,4 +42,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc README
 %attr(755,root,root) %{_bindir}/*
