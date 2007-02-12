@@ -1,5 +1,5 @@
 Summary:	Backup DVD structure to disk
-Summary(pl.UTF-8):   Kopiowanie na dysk struktury DVD
+Summary(pl.UTF-8):	Kopiowanie na dysk struktury DVD
 Name:		dvdbackup
 Version:	0.1
 Release:	2
