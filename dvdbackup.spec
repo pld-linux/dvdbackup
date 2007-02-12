@@ -1,5 +1,5 @@
 Summary:	Backup DVD structure to disk
-Summary(pl):	Kopiowanie na dysk struktury DVD
+Summary(pl.UTF-8):   Kopiowanie na dysk struktury DVD
 Name:		dvdbackup
 Version:	0.1
 Release:	2
@@ -19,10 +19,10 @@ Dvdbackup lets you make exact backup of DVD structure to disk in such
 a way that you can use it to master DVD, or as an input for video
 editing tools on Windows or Linux.
 
-%description -l pl
-Dvdbackup pozwala stworzyæ dok³adn± kopiê struktury DVD w taki sposób,
-¿e mo¿na j± pó¼niej wykorzystaæ do nagrania dysku DVD, albo jako dane
-dla programów do edycji wideo pod Windows czy Linuksem.
+%description -l pl.UTF-8
+Dvdbackup pozwala stworzyÄ‡ dokÅ‚adnÄ… kopiÄ™ struktury DVD w taki sposÃ³b,
+Å¼e moÅ¼na jÄ… pÃ³Åºniej wykorzystaÄ‡ do nagrania dysku DVD, albo jako dane
+dla programÃ³w do edycji wideo pod Windows czy Linuksem.
 
 %prep
 %setup -q -c -T
