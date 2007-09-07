@@ -1,0 +1,22 @@
+--- dvdbackup-0.1/dvdbackup.c.orig	2007-09-07 15:26:20.000000000 +0000
++++ dvdbackup-0.1/dvdbackup.c	2007-09-07 15:26:48.000000000 +0000
+@@ -748,9 +748,6 @@
+ 	}
+ 
+ 
+-	/* Close the VMG ifo file we got all the info we need */
+-        ifoClose(vmg_ifo);
+-
+ 
+ 	for (counter=0; counter < title_sets; counter++ ) {
+ 
+@@ -833,6 +830,9 @@
+ 	}
+ 
+ 
++	/* Close the VMG ifo file we got all the info we need */
++        ifoClose(vmg_ifo);
++
+ 	/* Lets start checking audio,sub pictures and channels my guess is namly that a special suburb will put titles with a lot of
+ 	 chapters just to make our backup hard */
+ 
