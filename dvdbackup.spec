@@ -2,7 +2,7 @@ Summary:	Backup DVD structure to disk
 Summary(pl.UTF-8):	Kopiowanie na dysk struktury DVD
 Name:		dvdbackup
 Version:	0.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications
 Source0:	http://dvd.chevelless230.com/%{name}.c
@@ -10,6 +10,7 @@ Source0:	http://dvd.chevelless230.com/%{name}.c
 Source1:	http://dvd.chevelless230.com/README
 # Source1-md5:	a80ef21a26c767c7fbb3e558ed50de29
 Patch0:		%{name}-dvdread.patch
+Patch1:		%{name}-ifoClose.patch
 URL:		http://dvd.chevelless230.com/dvdbackup.html
 BuildRequires:	libdvdread-devel >= 0.9.5-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,6 +30,7 @@ dla programów do edycji wideo pod Windows czy Linuksem.
 cp %{SOURCE0} .
 cp %{SOURCE1} .
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__cc} %{rpmcflags} %{name}.c -ldvdread -o dvdbackup
