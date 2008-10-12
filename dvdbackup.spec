@@ -1,17 +1,14 @@
 Summary:	Backup DVD structure to disk
 Summary(pl.UTF-8):	Kopiowanie na dysk struktury DVD
 Name:		dvdbackup
-Version:	0.1
-Release:	3
+Version:	0.1.1
+Release:	1
 License:	GPL
 Group:		Applications
-Source0:	http://dvd.chevelless230.com/%{name}.c
-# Source0-md5:	1db5d6c8b095995457bba6bf38e8a6b5
-Source1:	http://dvd.chevelless230.com/README
-# Source1-md5:	a80ef21a26c767c7fbb3e558ed50de29
+Source0:	http://dvd-create.sourceforge.net/%{name}-%{version}.tar.gz
+# Source0-md5:	53a071d1def5ee49d702a4dd080d25ac
 Patch0:		%{name}-dvdread.patch
-Patch1:		%{name}-ifoClose.patch
-URL:		http://dvd.chevelless230.com/dvdbackup.html
+URL:		http://dvd-create.sourceforge.net/
 BuildRequires:	libdvdread-devel >= 0.9.5-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,14 +23,11 @@ Dvdbackup pozwala stworzyć dokładną kopię struktury DVD w taki sposób,
 dla programów do edycji wideo pod Windows czy Linuksem.
 
 %prep
-%setup -q -c -T
-cp %{SOURCE0} .
-cp %{SOURCE1} .
+%setup -q -n %{name}
 %patch0 -p1
-%patch1 -p1
 
 %build
-%{__cc} %{rpmcflags} %{name}.c -ldvdread -o dvdbackup
+%{__cc} %{rpmcflags} src/%{name}.c -ldvdread -o dvdbackup
 
 %install
 rm -rf $RPM_BUILD_ROOT
