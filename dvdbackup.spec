@@ -27,7 +27,7 @@ dla programów do edycji wideo pod Windows czy Linuksem.
 %patch0 -p1
 
 %build
-%{__cc} %{rpmcflags} src/%{name}.c -ldvdread -o dvdbackup
+%{__cc} %{rpmldflags} %{rpmcflags} src/%{name}.c -ldvdread -o dvdbackup
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -41,4 +41,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/dvdbackup
