@@ -2,7 +2,7 @@ Summary:	Backup DVD structure to disk
 Summary(pl.UTF-8):	Kopiowanie na dysk struktury DVD
 Name:		dvdbackup
 Version:	0.1.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications
 Source0:	http://dvd-create.sourceforge.net/%{name}-%{version}.tar.gz
@@ -32,8 +32,7 @@ dla programów do edycji wideo pod Windows czy Linuksem.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
-
-install dvdbackup $RPM_BUILD_ROOT%{_bindir}
+install -p dvdbackup $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
