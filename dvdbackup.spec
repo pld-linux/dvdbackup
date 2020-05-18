@@ -2,7 +2,7 @@ Summary:	Backup DVD structure to disk
 Summary(pl.UTF-8):	Kopiowanie na dysk struktury DVD
 Name:		dvdbackup
 Version:	0.1.1
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications
 Source0:	http://dvd-create.sourceforge.net/%{name}-%{version}.tar.gz
