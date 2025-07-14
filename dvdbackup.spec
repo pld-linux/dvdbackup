@@ -24,7 +24,7 @@ dla programów do edycji wideo pod Windows czy Linuksem.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__cc} %{rpmldflags} %{rpmcflags} src/%{name}.c -ldvdread -o dvdbackup
